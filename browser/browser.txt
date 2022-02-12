@@ -1,0 +1,15 @@
+js는 싱글스레드언어인데 멀티태스킹이 가능한 이유는 , js의 runtime 환경 브라우저는 여러가지 스레드를 가지고 있다.
+따라서 js의 runtime 환경에서는 멀티스레드,이벤트루프로 다양한 것이 가능해진다.
+
+js enjine에는 memory heap과 call stack 으로 구성이 되어있다.
+memory heap은 변수할당,데이터할당,변수선언 하면 저장되는 곳이다.
+call stack 은 선언한 함수가 호출되면 쌓이는 곳으로 스택에 쌓인 순서대로 함수가 실행되어 돌아가야할 위치를 callstack을 통해 찾아간다.
+
+브라우저 runtime 환경은 jsengine,render,micro taskqueue, taskqueue 로 구성되어있는데.
+event loop가 빙글빙글 돌면서 callstack 이 비워져야 다음순서인 render 로 넘어간다.
+render은 60fps(=16.7ms) 사람의 최적화속도 에따라 가끔만 들리고 바로 microtaskqueue나 taskqueue로 넘어간다.
+microtaskqueue는 Promise , then , mutaition obeserver 가 호출될시 쌓이고 , 
+taskqueue는 setTimeout , addEventListner , webAPI callback 이 쌓인다.
+
+각각이 채워져있다면 이벤트루프는 각각 콜스택에전달하여 실행한다.
+비워질떄까지 다음으로 넘어가지 않는다.
