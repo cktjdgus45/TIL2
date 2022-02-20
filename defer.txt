@@ -1,0 +1,31 @@
+defer
+
+<p>...스크립트 앞 콘텐츠...</p>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => alert("`defer` 스크립트가 실행된 후, DOM이 준비되었습니다!")); // (2)
+</script>
+
+<script defer src="https://javascript.info/article/script-async-defer/long.js?speed=1"></script>
+
+<p>...스크립트 뒤 콘텐츠...</p>
+
+
+1.페이지 콘텐츠는 바로 출력됩니다.
+2.DOMContentLoaded 이벤트는 지연 스크립트 실행을 기다립니다. 따라서 얼럿창은 DOM 트리가 완성되고 지연 스크립트가 실행된 후에 뜹니다.
+
+
+순서	DOMContentLoaded
+async	load-first order. 문서 내 순서와 상관없이 먼저 다운로드된 스크립트가 먼저 실행됩니다.
+	비동기 스크립트는 HTML 문서가 완전히 다운로드되지 않은 상태라도 로드 및 실행될 수 있습니다.
+    스크립트 크기가 작거나 캐싱 처리 되어있을 때 혹은 HTML 문서 길이가 아주 길 때 이런 일이 발생합니다.
+defer	문서에 추가된 순	지연 스크립트는 문서 다운로드와 파싱이 완료된 후에,
+       DOMContentLoaded 이벤트 발생 전에
+        실행됩니다.
+
+
+defer를 사용하게 되면 스크립트가 실행되기 전 에 페이지가 화면에 출력된다는 점에 항상 유의해야 합니다.
+
+사용자는 그래픽 관련 컴포넌트들이 준비되지 않은 상태에서 화면을 보게 될 수 있죠.
+
+따라서 지연 스크립트가 영향을 주는 영역엔 반드시 '로딩 인디케이터’가 있어야 합니다. 관련 버튼도 사용 불가(disabled) 처리를 해줘야 하죠. 이렇게 해야 사용자에게 현재 어떤 것은 사용할 수 있는지, 어떤 것은 사용할 수 없는지를 알려줄 수 있습니다.
