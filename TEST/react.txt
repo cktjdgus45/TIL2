@@ -1,0 +1,6 @@
+REACT의 컴포넌트 테스트
+
+EX) UI 만을 보여주는 컴포넌트
+habit을 add ,delete 하는 기능을 가진 버튼과 habit의 name과count를 나타내는 컴포넌트
+
+이두가지를 test를 통해 정상적으로 기능을 하는지 test 한다.
