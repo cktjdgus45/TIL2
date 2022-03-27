@@ -1,0 +1,22 @@
+2. 테이블
+표(table)를 만들 때 사용하는 태그이다. 과거에는 테이블 태그를 사용하여 레이아웃을 구성하기도 하였으나 모던 웹에서는 주로 공간 분할 태그인 div 태그를 사용하여 레이아웃을 구성한다.
+
+tag	Description
+table	표를 감싸는 태그
+tr	표 내부의 행 (table row)
+th	행 내부의 제목 셀 (table heading)
+td	행 내부의 일반 셀 (table data)
+table tag
+
+ex)
+<table>
+      <tr>
+        <th>Name</th>
+        <th colspan="2">Telephone</th>
+      </tr>
+      <tr>
+        <td>Bill Gates</td>
+        <td>555 77 854</td>
+        <td>555 77 855</td>
+      </tr>
+    </table>
