@@ -1,0 +1,49 @@
+1.제목태그 h1,h2,h3,h4,h5,h6
+ h1이 가장 중요한 제목을 의미하며 글자의 크기도 가장 크다.
+시맨틱 웹의 의미를 살려서 제목 이외에는 사용하지 않는 것이 좋다. 검색엔진은 제목 태그를 중요한 의미로 받아들일 가능성이 크다.
+2.bold태그 b
+bold체를 지정한다. 제목 태그와 같이 의미론적(Semantic) 중요성의 의미는 없다.
+3. strong
+b tag와 동일하게 bold체를 지정한다. 하지만 의미론적(Semantic) 중요성의 의미를 갖는다.
+
+표현되는 외양은 b tag와 동일하지만 웹표준을 준수하고자 한다면 strong를 사용하는 것이 바람직하다.
+4. i
+Italic체를 지정한다. 의미론적(Semantic) 중요성의 의미는 없다.
+
+5.em
+emphasized(강조, 중요한) text를 지정한다. i tag와 동일하게 Italic체로 표현된다. 의미론적(Semantic) 중요성의 의미를 갖는다.
+
+6.small
+small text를 지정한다.
+
+7. mark
+highlighted text를 지정한다.
+
+8.del
+deleted (removed) text를 지정한다.
+
+9. ins
+inserted (added) text를 지정한다.
+
+10 .sub / sup
+sub 태그는 subscripted(아래에 쓰인) text를 sup 태그는 superscripted(위에 쓰인) text를 지정한다.
+
+--본문 태그
+
+11. p
+단락 (Paragraphs)을 지정한다.
+
+12.br
+br tag는 (강제)개행 (line break)을 지정한다. br tag는 빈 요소(empty element)로 종료태그가 없다.
+
+13.pre
+형식화된(preformatted) text를 지정한다. pre 태그 내의 content는 작성된 그대로 브라우저에 표시된다.
+
+14.hr
+수평줄을 삽입한다.
+
+15.q
+짧은 인용문(quotation)을 지정한다. 브라우저는 인용부호(큰따옴표/quotation marks)로 q 요소를 감싼다.
+
+16.blockquote
+긴 인용문 블록을 지정한다. 브라우저는 blockquote 요소를 들여쓰기한다. css를 이용하여 다양한 style을 적용할 수 있다.
