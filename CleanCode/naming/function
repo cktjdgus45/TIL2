@@ -1,0 +1,17 @@
+export function circumference(radius) {
+  return 2 * Math.PI * radius;
+}
+
+// export function circum(radius) { //원->원주율
+//   return 2 * Math.PI * radius;
+// }
+
+//===================================================
+
+export function inNewEngland(state) {
+    return ['MA', 'CT', 'ME', 'VT', 'NH', 'RI'].includes(state);
+  }
+  // export function inNewEngland(aCustomer) {
+  //   return ['MA', 'CT', 'ME', 'VT', 'NH', 'RI'].includes(aCustomer.address.state);
+  // }
+  
