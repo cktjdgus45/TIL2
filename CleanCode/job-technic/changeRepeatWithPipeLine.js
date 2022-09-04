@@ -11,7 +11,7 @@ export function acquireData(input) { //반복문을 파이프 라인으로 만�
       }))
   }
   
-  const input = `office, country, telephone\n
+  const input = `office, country, telephone\nㅊ
   Chicago, USA, +1 312 373 1000\n
   Beijing, China, +86 4008 900 505\n
   Bangalore, India, +91 80 4064 9570\n
