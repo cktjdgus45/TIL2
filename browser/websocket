@@ -1,3 +1,39 @@
 websocket 은 http와 다른 또 하나의 프로토콜로 req,res 방식이 아닌 req,req,req,res 방식이 가능한 프로토콜이다.
 실시간프로그래밍에 유용하다.
 브라우저에서 서버로 전달하고받도록 브라우저 전용 API가 있다.
+
+websocket을 좀더 쉽게 사용할수 있는 프레임 워크로 socketio 가 있다.
+Socket.IO는 실시간 웹 애플리케이션을 위한 이벤트 기반 라이브러리이다. 웹 클라이언트와 서버 간의 실시간 양방향 통신을 가능케 한다.
+Socket.IO is a library that enables low-latency, bidirectional and event-based communication between a client and a server.
+
+Diagram of a communication between a server and a client
+It is built on top of the WebSocket protocol and provides additional guarantees like fallback to HTTP long-polling or automatic reconnection.
+
+//server side
+
+import { Server } from "socket.io";
+
+const io = new Server(3000);
+
+io.on("connection", (socket) => {
+  // send a message to the client
+  socket.emit("hello from server", 1, "2", { 3: Buffer.from([4]) });
+
+  // receive a message from the client
+  socket.on("hello from client", (...args) => {
+    // ...
+  });
+});
+
+//client side
+
+import { io } from "socket.io-client";
+
+const socket = io("ws://localhost:3000");
+
+// send a message to the server
+socket.emit("hello from client", 5, "6", { 7: Uint8Array.from([8]) });
+
+// receive a message from the server
+socket.on("hello from server", (...args) => {
+  // ...
