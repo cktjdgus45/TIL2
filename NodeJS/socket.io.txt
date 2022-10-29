@@ -11,3 +11,16 @@ socketserver.on("connect",()=>{
 
 socket.rooms 를 통해 방의 정보를 얻을수도있다.
 socketserver.sockets.adapter 의 소켓서버의 소켓들의 adapter를 사용해 모든 room의 정보들을 얻을수도있다.
+
+6. Room
+각 namespace 내에서 임의의 채널을 지정할 수 있다. 이를 room이라 하며 이를 통해 room에 join되어 있는 클라이언트 만의 데이터 송수신이 가능하게 된다.
+
+즉 각 클라이언트는 socket을 가지게 되며 이 socket은 namespace를 가지고 각 namespace는 room을 가질 수 있다.
+
+각 socket은 랜덤하고 유일하게 작성된 socket.id로 구별된다. socket.io는 각 socket을 socket.id를 room 식별자로 사용하여 자동으로 room을 생성하고 join시킨다.
+
+특정 클라이언트에게만 메시지를 전송할 때 io.to(id).emit를 사용하는데 이것은 사실 디폴트로 생성되어 자동 join된 개별 socket의 room에 소속되어 있는 유일한 클라이언트에 메시지를 전송한 것이다.
+// room에 join한다
+    socket.join(room);
+    // room에 join되어 있는 클라이언트에게 메시지를 전송한다
+    chat.to(room).emit('chat message', data.msg);
